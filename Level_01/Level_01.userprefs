@@ -1,14 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EasyMobileJoystick\ReadMe.txt">
-    <Files>
-      <File FileName="Assets\EasyMobileJoystick\Script\MenuJump.js" Line="1" Column="1" />
-      <File FileName="Assets\EasyMobileJoystick\ReadMe.txt" Line="37" Column="22" />
-      <File FileName="Assets\EasyMobileJoystick\Script\EasyMobileJoystick.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AudioZone.cs" Line="1" Column="1" />
-      <File FileName="Assets\EasyMobileJoystick\Script\Menu.js" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

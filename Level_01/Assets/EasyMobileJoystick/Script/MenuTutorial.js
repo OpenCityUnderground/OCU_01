@@ -1,15 +1,17 @@
+#pragma strict 
+
 var customSkin : GUISkin;
 var menuSizeMultiplier = 2.0;
 var fontSizeAdj = 140;
 
-// MenuTutorial script
+// Menu Tutorial script
 
 function OnGUI () {
 
 			// Define script variables
   			GUI.skin = customSkin;
   			var GOPlayer : GameObject;
-  			var menuScript : Component;
+  			var menuScript : Behaviour;
   			var font = Resources.Load("StencilPunchJNL") as Font;
   			var screenWidthAdj = Screen.width * menuSizeMultiplier;
   			var screenHeightAdj = Screen.height * menuSizeMultiplier;
@@ -65,9 +67,9 @@ function OnGUI () {
 			{
 				// Close tutorial menu, Open main menu
 				GOPlayer = GameObject.Find("Player"); 			
-				menuScript = GOPlayer.GetComponent("MenuMain");
+				menuScript = GOPlayer.GetComponent(MenuMain);
 				menuScript.enabled = true;
-				menuScript = GOPlayer.GetComponent("MenuTutorial");
+				menuScript = GOPlayer.GetComponent(MenuTutorial);
 				menuScript.enabled = false;
 			}
 }

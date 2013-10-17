@@ -1,10 +1,12 @@
+#pragma strict 
+
 var customSkin : GUISkin;
 var menuItemSoundOnOff = "SOUND  OFF";
 var toggleBool = false;
-var toggleBoolNew;
+var toggleBoolNew = false;
 var menuSizeMultiplier = 2.0;
 
-// MenuMain script
+// Menu Main script
 
 function OnGUI () {
 
@@ -15,9 +17,9 @@ function OnGUI () {
   			var GORightJoyStick : GameObject;
   			var GOLeftJoyStick : GameObject;
 			var audioZones : Component[];
-			var menuScript : Component;
-			var joyStickControl : Component;
-			var whiteBackgroundTexture = Resources.Load("whiteBackground") as Texture;
+			var menuScript : Behaviour;
+			var joyStickControl : Behaviour;
+			var whiteBackgroundTexture = Resources.Load("whiteBackground") as Texture2D;
   			var font = Resources.Load("StencilPunchJNL") as Font;
   			var screenWidthAdj = Screen.width * menuSizeMultiplier;
   			var screenHeightAdj = Screen.height * menuSizeMultiplier;
@@ -69,9 +71,9 @@ function OnGUI () {
 			GOLeftJoyStick = GameObject.Find("LeftStick");
 			
 			// Turn off joy sticks
-			joyStickControl = GORightJoyStick.GetComponent("EasyMobileJoystick");	
+			joyStickControl = GORightJoyStick.GetComponent(EasyMobileJoystick);	
 			joyStickControl.enabled = false;		
-			joyStickControl = GOLeftJoyStick.GetComponent("EasyMobileJoystick");	
+			joyStickControl = GOLeftJoyStick.GetComponent(EasyMobileJoystick);	
 			joyStickControl.enabled = false;
 					
 			// Display menu and menu items						
@@ -106,9 +108,9 @@ function OnGUI () {
 			if( GUI.Button( new Rect( xPos, yPos + heightPlus1, menuItemWidth, menuItemHeight ), "CREDITS" ) )
 			{
 				// Turn credits menu ON,  Turn main menu OFF
-				menuScript = GOPlayer.GetComponent("MenuCredits");
+				menuScript = GOPlayer.GetComponent(MenuCredits);
 				menuScript.enabled = true;
-				menuScript = GOPlayer.GetComponent("MenuMain");
+				menuScript = GOPlayer.GetComponent(MenuMain);
 				menuScript.enabled = false;
 			}
 			
@@ -117,9 +119,9 @@ function OnGUI () {
 			if( GUI.Button( new Rect( xPos, yPos + heightPlus1, menuItemWidth, menuItemHeight ), "TUTIORAL" ) )
 			{
 				// Turn tutorial menu ON,  Turn main menu OFF
-				menuScript = GOPlayer.GetComponent("MenuTutorial");
+				menuScript = GOPlayer.GetComponent(MenuTutorial);
 				menuScript.enabled = true;
-				menuScript = GOPlayer.GetComponent("MenuMain");
+				menuScript = GOPlayer.GetComponent(MenuMain);
 				menuScript.enabled = false;
 			}
 			
@@ -136,11 +138,25 @@ function OnGUI () {
 			if( GUI.Button( new Rect( xPos, yPos + heightPlus1, menuItemShortWidth, menuItemHeight ), "OPEN" ) )
 			{
 				// Turn joy stick controls back on, then close the menu				
-				joyStickControl = GORightJoyStick.GetComponent("EasyMobileJoystick");	
+				joyStickControl = GORightJoyStick.GetComponent(EasyMobileJoystick);	
 				joyStickControl.enabled = true;		
-				joyStickControl = GOLeftJoyStick.GetComponent("EasyMobileJoystick");	
+				joyStickControl = GOLeftJoyStick.GetComponent(EasyMobileJoystick);	
 				joyStickControl.enabled = true;		
-				menuScript = GOPlayer.GetComponent("MenuMain");
+				menuScript = GOPlayer.GetComponent(MenuMain);
 				menuScript.enabled = false;			
+				menuScript = GOPlayer.GetComponent(MenuMainTurnOn);
+				flashingText(GOPlayer);
 			}
 }
+
+function flashingText(GOPlayer : GameObject) {
+
+			// Flashing text 
+			for (var z = 0; z<3; z++) {
+			 	GOPlayer.GetComponent(MenuMainTurnOn).menuText = "Menu";	
+			 	yield WaitForSeconds(.5);
+			 	GOPlayer.GetComponent(MenuMainTurnOn).menuText = "";	
+			 	yield WaitForSeconds(.5); 
+			}
+}			
+			

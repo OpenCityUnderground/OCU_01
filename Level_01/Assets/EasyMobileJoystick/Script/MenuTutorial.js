@@ -1,75 +1,96 @@
 #pragma strict 
 
 var customSkin : GUISkin;
-var menuSizeMultiplier = 2.0;
-var fontSizeAdj = 140;
+var font : Font;
+var menuGreenHat : Texture2D;
+var whiteBackground : Texture2D;
 
 // Menu Tutorial script
 
 function OnGUI () {
 
-			// Define script variables
-  			GUI.skin = customSkin;
-  			var GOPlayer : GameObject;
-  			var menuScript : Behaviour;
-  			var font = Resources.Load("StencilPunchJNL") as Font;
-  			var screenWidthAdj = Screen.width * menuSizeMultiplier;
-  			var screenHeightAdj = Screen.height * menuSizeMultiplier;
-			var width = (screenWidthAdj / 10);
-			var height = (screenHeightAdj / 12);
-			var menuItemShortWidth = (screenWidthAdj / 22);
-			var menuItemHeight = (screenHeightAdj / 20);		
-			var boxWidth = (screenWidthAdj / 7);
-			var boxHeight = (screenHeightAdj / 3.5);
-			var xPos = (screenWidthAdj / 2 )/menuSizeMultiplier; 
-			var xPosAdj = (xPos - screenWidthAdj / 15);
-			var yPos = (screenHeightAdj / 5 )/menuSizeMultiplier;		
-			var heightPlus1 = (screenHeightAdj / 16);
-			var heightPlus2 = (screenHeightAdj / 6.5);
-			var varFontSize = (screenWidthAdj / 65);
-			var varFontSize2 = (screenWidthAdj / fontSizeAdj);
-			var widthPlus = (screenWidthAdj / 15);
-			xPos = xPos - width/2;
-						
-			// Define GUI skin attributes
-			GUI.skin.box.fontSize = varFontSize;
-			GUI.skin.box.normal.textColor = Color.red;				
-			GUI.skin.box.font = font; 				
-			GUI.skin.button.font = font;
-			GUI.skin.button.fontSize = varFontSize;
-			GUI.skin.button.normal.textColor = Color.black;
-			GUI.skin.button.hover.textColor = Color.red;
-			GUI.skin.button.imagePosition = UnityEngine.ImagePosition.TextOnly;
-			GUI.skin.button.alignment = UnityEngine.TextAnchor.MiddleLeft;	
-			GUI.skin.toggle.font = font;
-			GUI.skin.toggle.fontSize = varFontSize;
-			GUI.skin.toggle.normal.textColor = Color.black;
-			GUI.skin.toggle.onNormal.textColor = Color.black;
-			GUI.skin.toggle.onHover.textColor = Color.red;
-			GUI.skin.label.fontSize = varFontSize2;
-			GUI.skin.label.normal.textColor = Color.black;				
-			GUI.skin.label.font = font; 				
+	// Define script variables
+	GUI.skin = customSkin;
+	var GOPlayer : GameObject;
+	var menuScript : Behaviour;
+  			
+	// Tutorial text
+	var menuItemTutorial = "Press and move left thumb to move in a direction. Press and move right thumb to look around.";
+  			
+ 	// define dimensions
+	var menuSizeMultiplier = 2.0;
+	var screenWidthAdj = Screen.width * menuSizeMultiplier;
+	var screenHeightAdj = Screen.height * menuSizeMultiplier;
+	var xPos = (screenWidthAdj / 2 )/menuSizeMultiplier;
+	var xPosAdj = (xPos - screenWidthAdj / 10.5);
+	var yPos = (Screen.height / 12);		
+	var width = (screenWidthAdj / 6.4);
+	var height = (screenHeightAdj / 5);
+	var menuItemShortWidth = (screenWidthAdj / 22);
+	var menuItemHeight = (screenHeightAdj / 18);		
+	var boxWidth = (screenWidthAdj / 5);
+	var boxHeight = (screenHeightAdj / 3.5);
+	var fontSize = (screenWidthAdj / 40);
+	var smallFontSize = fontSize/1.42;
+	var widthPlus = (screenWidthAdj / 15);
+	xPos = xPos - width/1.2;
+		
+	// Define GUI skin attributes
+	GUI.skin = customSkin;
+	GUI.skin.box.fontSize = fontSize;
+	GUI.skin.box.normal.textColor = Color(1f, 62f/255f, 21f/255f); // Orange				
+	GUI.skin.box.font = font; 				
+	GUI.skin.button.font = font;
+	GUI.skin.button.fontSize = fontSize;
+	GUI.skin.button.normal.textColor = Color.black;
+	GUI.skin.button.hover.textColor = Color(1f, 62f/255f, 21f/255f); // Orange
+	GUI.skin.button.imagePosition = UnityEngine.ImagePosition.TextOnly;
+	GUI.skin.button.alignment = UnityEngine.TextAnchor.MiddleLeft;	
+	GUI.skin.button.normal.background = whiteBackground;
+	GUI.skin.label.font = font;
+	GUI.skin.label.fontSize = fontSize;
+	
+	// Get reference to game objects
+	GOPlayer = GameObject.Find("Player");
+	
+	// Start of tutorial menu
+		
+	// Display green hat menu label
+	GUI.skin.label.fontSize = fontSize;
+	GUI.skin.label.normal.textColor = Color.white;
+	GUI.skin.label.normal.background = menuGreenHat;
+	GUI.skin.label.alignment = UnityEngine.TextAnchor.LowerCenter;	
+	GUI.Label(Rect( xPosAdj, yPos, boxWidth, boxHeight/3 ), "Tutorial" );
+	
+	yPos += boxHeight/3;
 			
-			// Start of tutorial menu
+	// Display menu and menu items						
+	GUI.Box(Rect( xPosAdj, yPos, boxWidth, boxHeight ), "" );
+	
+	yPos += boxHeight/15;	
+	xPos += widthPlus * .724;
 			
-			// Tutorial text
-			var menuItemTutorial = "WELCOME TO OPEN CITY UNDERGROUND. THE DIRRECTIONS ARE SIMPLE. THE LEFT THUMB MOVES YOU DIRECTIONALLY AND THE RIGHT THUMB DIRECTS WHERE YOU'RE LOOKING. YOU CAN DO BOTH AT THE SAME TIME. THERE IS NO OBJECTIVE EXCEPT TO EXPERIENCE AND ENJOY.";
-			
-			// Tutorial Menu			
-			GUI.Box(Rect( xPosAdj, yPos, boxWidth, boxHeight ), "01 - TUTORIAL", "box" );
-			GUI.Label(Rect( xPos, yPos + heightPlus1, width * 1.2, height * 1.8 ), menuItemTutorial );
-						
-			yPos += heightPlus2;
-			xPos += widthPlus * 1.2;
-			
-			// Back Button
-			if( GUI.Button( new Rect( xPos, yPos + heightPlus1, menuItemShortWidth, menuItemHeight ), "BACK" ) )
-			{
-				// Close tutorial menu, Open main menu
-				GOPlayer = GameObject.Find("Player"); 			
-				menuScript = GOPlayer.GetComponent(MenuMain);
-				menuScript.enabled = true;
-				menuScript = GOPlayer.GetComponent(MenuTutorial);
-				menuScript.enabled = false;
-			}
+	// Display tutorial description			
+	GUI.skin.label.normal.background = whiteBackground;
+	GUI.skin.label.normal.textColor = Color(55f/255f, 81f/255f, 85f/255f); // blue green
+	GUI.skin.label.fontSize = smallFontSize;
+	GUI.skin.label.alignment = UnityEngine.TextAnchor.UpperLeft;
+	GUI.Label(Rect( xPos, yPos, width, height ), menuItemTutorial );
+							
+	yPos += boxHeight/5;
+	yPos += (boxHeight/5);
+	yPos += (boxHeight/5) * 1.5;	
+	xPos += widthPlus * 1.3;
+	xPos += widthPlus * .63;
+	
+	// Display exit button				
+	if( GUI.Button( new Rect( xPos, yPos, menuItemShortWidth, menuItemHeight ), "Exit" ) )
+	{
+		// Close tutorial menu, Open main menu
+		GOPlayer = GameObject.Find("Player"); 			
+		menuScript = GOPlayer.GetComponent(MenuMain);
+		menuScript.enabled = true;
+		menuScript = GOPlayer.GetComponent(MenuTutorial);
+		menuScript.enabled = false;
+	}
 }

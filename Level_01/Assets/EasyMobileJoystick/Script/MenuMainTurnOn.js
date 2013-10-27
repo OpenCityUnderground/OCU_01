@@ -1,48 +1,63 @@
 #pragma strict 
 
 var customSkin : GUISkin;
-var menuSizeMultiplier = 2.0;
-var menuText = "MENU";
+var menuIcon : Texture2D;
+var menuIconOn : Texture2D;
+var menuIconOff : Texture2D;
 var noneBackground : Texture2D;
+var toggleIcon = false;
+var turnOnIcon = true;
 
 // Menu Main On script
 
-function OnGUI () {
+function OnGUI() {
 
-  			// Define script variables
-  			GUI.skin = customSkin;
-  			var GOPlayer : GameObject;
-			var menuScript : Behaviour;
-  			var font = Resources.Load("StencilPunchJNL") as Font;
-			var xPos = (Screen.width / 2 );
-			var yPos = 0;		
-			var menuWidth = (Screen.width / 12);
-			var menuHeight = (Screen.height / 10) * menuSizeMultiplier;		
-			var varFontSize = (Screen.width / 30);
-			xPos = xPos - menuWidth/2;
+	// Define script variables
+	GUI.skin = customSkin;
+	var GOPlayer : GameObject;
+	var menuScript : Behaviour;
+	var xPos = (Screen.width / 1.968);
+	var yPos = 0;		
+	var iconWidth = (Screen.width / 8);
+	var iconHeight = (Screen.height / 10);		
+	xPos = xPos - iconWidth/2;
 
-			// Define GUI skin attributes
-			GUI.skin.button.font = font;
-			GUI.skin.button.fontSize = varFontSize;
-			GUI.skin.button.normal.textColor = Color.red;
-			GUI.skin.button.onHover.textColor = Color.red;
-			GUI.skin.button.alignment = UnityEngine.TextAnchor.MiddleCenter;
- 
-			GUI.skin.button.normal.background = noneBackground;
-			GUI.skin.button.hover.background = noneBackground;
-			
-			// Get reference to game objects
-			GOPlayer = GameObject.Find("Player");
-			
-			if( GUI.Button( new Rect( xPos, yPos, menuWidth, menuHeight ), menuText ) )
-			{
-				// Turn credits menu ON,  Turn main menu OFF
-				menuScript = GOPlayer.GetComponent(MenuCredits);
-				menuScript.enabled = false;
-				menuScript = GOPlayer.GetComponent(MenuTutorial);
-				menuScript.enabled = false;
-				menuScript = GOPlayer.GetComponent(MenuMain);
-				menuScript.enabled = true;
-				// menuText = "MENU";
-			}
+	// Define GUI skin attributes
+	GUI.skin.button.normal.background = menuIcon;
+	GUI.skin.button.hover.background = noneBackground;
+	
+	// Get reference to game objects
+	GOPlayer = GameObject.Find("Player");
+	
+	if(turnOnIcon) {
+		menuIcon = menuIconOn;
+		turnOnIcon = false;
+	}
+	
+	if( GUI.Button( new Rect( xPos, yPos, iconWidth, iconHeight ), "" ) )
+	{
+		// Turn credits menu ON,  Turn main menu OFF
+		menuScript = GOPlayer.GetComponent(MenuCredits);
+		menuScript.enabled = false;
+		menuScript = GOPlayer.GetComponent(MenuTutorial);
+		menuScript.enabled = false;
+		menuScript = GOPlayer.GetComponent(MenuMain);
+		menuScript.enabled = true;
+	}
+	
+	if(toggleIcon) {
+		flashingIcon();
+		toggleIcon = false;
+	}
+}
+
+function flashingIcon() {
+
+	// Flash icon 
+	for (var z = 0; z<4; z++) {
+	 	menuIcon = menuIconOn;
+	 	yield WaitForSeconds(.5);
+	 	menuIcon = menuIconOff;	
+	 	yield WaitForSeconds(.5);
+	}
 }

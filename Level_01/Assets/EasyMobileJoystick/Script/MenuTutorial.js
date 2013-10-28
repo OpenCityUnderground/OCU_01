@@ -47,6 +47,7 @@ function OnGUI () {
 	GUI.skin.button.imagePosition = UnityEngine.ImagePosition.TextOnly;
 	GUI.skin.button.alignment = UnityEngine.TextAnchor.MiddleLeft;	
 	GUI.skin.button.normal.background = whiteBackground;
+	GUI.skin.button.hover.background = whiteBackground;
 	GUI.skin.label.font = font;
 	GUI.skin.label.fontSize = fontSize;
 	

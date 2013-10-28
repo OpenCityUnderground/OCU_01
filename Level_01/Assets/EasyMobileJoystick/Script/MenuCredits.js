@@ -35,7 +35,7 @@ function OnGUI () {
 	GUI.skin = customSkin;
 	GUI.skin.box.fontSize = varFontSize;
 	GUI.skin.box.normal.textColor = Color(1f, 62f/255f, 21f/255f); // Orange				
-	GUI.skin.box.font = font; 				
+	GUI.skin.box.font = font;
 	GUI.skin.button.font = font;
 	GUI.skin.button.fontSize = varFontSize;
 	GUI.skin.button.normal.textColor = Color.black;
@@ -43,6 +43,9 @@ function OnGUI () {
 	GUI.skin.button.imagePosition = UnityEngine.ImagePosition.TextOnly;
 	GUI.skin.button.alignment = UnityEngine.TextAnchor.MiddleLeft;	
 	GUI.skin.button.normal.background = whiteBackground;
+	GUI.skin.button.hover.background = whiteBackground;
+	
+	
 	GUI.skin.label.normal.textColor = Color.white;
 	GUI.skin.label.normal.background = menuGreenHat;
 	GUI.skin.label.font = font;
@@ -68,12 +71,14 @@ function OnGUI () {
 	GUI.Box(Rect( xPosAdj, yPos, boxWidth, boxHeight ), "" );
 		
 	yPos += boxHeight/15;
-	// This is the display button for Derric, later on it may contain some bio information			
+	
+	// This is the display button for Derric, later on it may contain some bio information
 	if( GUI.Button( new Rect( xPos, yPos, menuItemWidth, menuItemHeight  ), "Derric Eady", TextStyle ) )
 	{
 	}
 	
 	yPos += boxHeight/5;
+	
 	// This is the display button for Martin, later on it may contain some bio information
 	if( GUI.Button( new Rect( xPos, yPos, menuItemWidth, menuItemHeight  ), "Martin Eady", TextStyle ) )
 	{

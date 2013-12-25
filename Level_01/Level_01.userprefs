@@ -1,6 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EasyMobileJoystick\Script\MenuCredits.js">
+    <Files>
+      <File FileName="Assets\EasyMobileJoystick\Script\MenuMain.js" Line="44" Column="38" />
+      <File FileName="Assets\EasyMobileJoystick\Script\MenuTutorial.js" Line="1" Column="1" />
+      <File FileName="Assets\EasyMobileJoystick\Script\MenuMainTurnOn.js" Line="1" Column="1" />
+      <File FileName="Assets\EasyMobileJoystick\Script\MenuCredits.js" Line="34" Column="42" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -24,7 +24,8 @@ function OnGUI() {
 
 	// Define GUI skin attributes
 	GUI.skin.button.normal.background = menuIcon;
-	GUI.skin.button.hover.background = noneBackground;
+	//GUI.skin.button.hover.background = noneBackground;
+	GUI.skin.button.active.background = noneBackground;
 	
 	// Get reference to game objects
 	GOPlayer = GameObject.Find("Player");
@@ -36,7 +37,7 @@ function OnGUI() {
 	
 	if( GUI.Button( new Rect( xPos, yPos, iconWidth, iconHeight ), "" ) )
 	{
-		// Turn credits menu ON,  Turn main menu OFF
+		// Turn credits menu OFF,  Turn tutorial menu OFF, turn main menu ON
 		menuScript = GOPlayer.GetComponent(MenuCredits);
 		menuScript.enabled = false;
 		menuScript = GOPlayer.GetComponent(MenuTutorial);

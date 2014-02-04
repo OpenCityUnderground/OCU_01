@@ -1,0 +1,5 @@
+-- modo Event Log -- Tue Feb  4 12:11:37 2014
+ 
+System -------- Time -------------------- Type -- Message -------------------------------------
+Log System      Tue Feb  4 12:11:34 2014  Info   -Log System      Log system started
+Scripts         Tue Feb  4 12:11:35 2014  Info   -Scripts         /Applications/Unity/Unity.app/Contents/Tools/ModoToUnity.py

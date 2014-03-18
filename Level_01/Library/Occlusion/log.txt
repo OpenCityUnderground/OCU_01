@@ -1,17 +1,17 @@
-[03:40:00] INFO: Umbra 3 Optimizer version 3.2.11  (build: 0)
-[03:40:00] INFO: T: 20 O: 5 H: 0.25 B: 100
-[03:40:00] INFO: Tile grid 52x16x24 (at -24,-8,-12) created for scene: 231 tiles (0 empties not included) in 0.006 seconds
-[03:40:00] INFO: Using 4 threads to compute 231 tiles, cache 4096 MB
-[03:40:01] INFO: Tile processing complete, computed 178 tiles
-[03:40:01] INFO: Strict view volumes: no
-[03:40:01] INFO: Filtered 14/15 inside clusters
-[03:40:01] INFO: Filtered 76/77 global clusters
-[03:40:01] INFO: 833/909 cells reachable after global analysis
-[03:40:02] INFO: collapsed leaf tiles 231 => 10
-[03:40:02] INFO: Generating LOD tiles using 4 threads
-[03:40:02] INFO: Connecting LOD tiles
-[03:40:02] INFO: Compressing lists
-[03:40:02] INFO: Average index range size: 2.49
-[03:40:02] INFO: object list: 44 B, cluster list: 12 B
-[03:40:02] INFO: created tome with 19 tiles, 17 targets and 0 gates
-[03:40:02] DEBUG: Total allocations 428215, peak 7928 (size 3 MB 264 kB 150 B)
+[03:58:07] INFO: Umbra 3 Optimizer version 3.2.11  (build: 0)
+[03:58:07] INFO: T: 20 O: 5 H: 0.25 B: 100
+[03:58:07] INFO: Tile grid 52x16x24 (at -24,-8,-12) created for scene: 231 tiles (0 empties not included) in 0.006 seconds
+[03:58:07] INFO: Using 4 threads to compute 231 tiles, cache 4096 MB
+[03:58:07] INFO: Tile processing complete, computed 0 tiles
+[03:58:07] INFO: Strict view volumes: no
+[03:58:07] INFO: Filtered 14/15 inside clusters
+[03:58:07] INFO: Filtered 76/77 global clusters
+[03:58:07] INFO: 833/909 cells reachable after global analysis
+[03:58:07] INFO: collapsed leaf tiles 231 => 10
+[03:58:07] INFO: Generating LOD tiles using 4 threads
+[03:58:08] INFO: Connecting LOD tiles
+[03:58:08] INFO: Compressing lists
+[03:58:08] INFO: Average index range size: 2.49
+[03:58:08] INFO: object list: 44 B, cluster list: 12 B
+[03:58:08] INFO: created tome with 19 tiles, 17 targets and 0 gates
+[03:58:08] DEBUG: Total allocations 428215, peak 7928 (size 3 MB 264 kB 150 B)

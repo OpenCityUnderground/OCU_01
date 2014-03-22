@@ -1,0 +1,47 @@
+Initialize engine version: 4.2.1f4 (4d30acc925c2)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.1422]
+    Renderer: NVIDIA GeForce GTX 560 
+    Vendor:   NVIDIA
+    VRAM:     1999 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 DF24=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading E:\Github\OCU_01\Level_01\OCU_01_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.098 seconds
+desktop: 1920x1200 59Hz; virtual: 3520x1223 at -1600,0
+<RI> Initializing input.
+<RI> Input initialized.
+[mecanim]: BindSkeleton: cannot find Transform 'Camera'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
+[mecanim]: BindSkeleton: cannot find Transform 'Directional_Light'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
+[mecanim]: BindSkeleton: cannot find Transform 'Mesh'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
+[mecanim]: BindSkeleton: cannot find Transform 'Render'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
+[mecanim]: BindSkeleton: cannot find Transform 'Texture_Group'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
+[mecanim]: BindSkeleton: cannot find Transform '_none___Image___Texture_'
+ 
+(Filename: C:/BuildAgent/work/cac08d8a5e25d4cb/Runtime/Animation/Animator.cpp Line: 1489)
+
